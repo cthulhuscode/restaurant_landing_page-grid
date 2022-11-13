@@ -1,0 +1,36 @@
+.container{
+  display: grid;
+
+  /* Ancho de cada columna */
+  /* grid-template-columns: 100px 200px 300px; */
+
+  /* Alto de cada fila */
+  grid-template-rows: 150px 250px;
+
+  /* Cada fila nueva tendrá 150px de altura */
+  /* grid-auto-rows: 150px; */
+
+  /* Cada column nuevo tendrá 100px de ancho */ 
+  grid-auto-columns: 100px;
+
+  /* Distribución/Llenado de items en la grilla */
+  grid-auto-flow: column;
+    /*  column - crea nuevas columnas
+        row - crea nuevas filas
+        dense - usa los huecos para rellenar      
+    */
+
+  /* Crear un espacio entre rows/columns, no lo crea en el perímetro del container */
+  row-gap: 20px;
+  column-gap: 40px;
+
+  /* mismo gap para rows y columns */
+  /* gap: 50px; */
+
+  border: 5px solid lightcoral;
+}
+
+.item{
+  border: 5px solid lightgreen;
+  font-size: 4rem;
+}
