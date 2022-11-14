@@ -15,11 +15,13 @@ main{
   margin: 0 auto;
 }
 
-.hero{
+.hero{  
+  /* position: relative; */
   display: grid;
-  grid-template-columns: minmax(300px, 2fr) 3fr;
+  grid-template-columns: minmax(300px, 2fr) 3fr;  
   grid-auto-rows: 600px;
   border-bottom: 1px solid #eee;
+  overflow: hidden;  
 }
 
 
@@ -77,10 +79,8 @@ h2{
 }
 
 .services-grid{
-  height: 600px;
-
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
   grid-auto-rows: 1fr;  
   gap: 20px;
   justify-content: center;  
@@ -101,7 +101,7 @@ h2{
 .menu-grid{
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(5, minmax(100px, 250px));
+  grid-template-columns: repeat(auto-fit, 200px);
   gap: 10px;
 }
 
@@ -115,6 +115,42 @@ h2{
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+@media screen and (max-width: 1316px) {
+  .hero{
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero{
+    grid-template-columns: minmax(300px, 500px);
+    justify-content: center;
+    /* background-image: url("./images/hero.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain; */
+  }  
+  /* .hero::before{    
+    content: "";
+    position: absolute;    
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff991b 0.5%, rgba(0,0,0,0));    
+  } */
+  .hero-image{
+    display: none;
+  }  
+}
+
+@media screen and (max-width: 555px) {
+  .services-grid{
+    grid-template-columns: repeat(auto-fit, minmax(75px, 120px));
+  }
+  .menu-grid{
+    grid-template-columns: repeat(auto-fit, 180px);
+  }
 }
 
 footer{
