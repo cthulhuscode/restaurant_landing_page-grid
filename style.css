@@ -16,16 +16,15 @@ main{
 }
 
 .hero{  
-  /* position: relative; */
-  display: grid;
+  position: relative;
+  display: grid;  
   grid-template-columns: minmax(300px, 2fr) 3fr;  
   grid-auto-rows: 600px;
   border-bottom: 1px solid #eee;
   overflow: hidden;  
 }
 
-
-.hero-image {
+.hero .hero-image {
   width: 100%;
   height: 100%;
   /* Hace que la imagen se ajuste al espacio
@@ -34,7 +33,12 @@ main{
   object-fit: contain;
 }
 
-.info{
+.hero .hero-info{
+  align-self: center;
+  z-index: 9;
+}
+
+.hero-info{
   align-self: center;
   justify-self: center;
   display: grid;
@@ -44,17 +48,17 @@ main{
   row-gap: 30px;
 }
 
-.info > h1{
+.hero-info > h1{
   font-size: 3.8rem;
   color: var(--black-color);
 }
 
-.info > p{
+.hero-info > p{
   font-size: 1.5rem;
   font-weight: 300;
 }
 
-.info > button{
+.hero-info > button{
   width: 130px;
   height: 35px;
   border-radius: 25px;
@@ -65,7 +69,7 @@ main{
   cursor: pointer;
 }
 
-.info > button:hover {
+.hero-info > button:hover {
   background-color: #fb8c00;
 }
 
@@ -123,22 +127,26 @@ h2{
   }
 }
 
-@media screen and (max-width: 768px) {
-  .hero{
-    grid-template-columns: minmax(300px, 500px);
-    justify-content: center;
-    /* background-image: url("./images/hero.png");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain; */
-  }  
-  /* .hero::before{    
+@media screen and (max-width: 1205px){
+  .hero::before{    
     content: "";
     position: absolute;    
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #ff991b 0.5%, rgba(0,0,0,0));    
-  } */
+    background: linear-gradient(90deg, #ff991b 0.1%, rgba(0,0,0,0));    
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero{
+    grid-template-columns: minmax(300px, 500px);
+    justify-content: center;
+    background-image: url("./images/hero.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+  }  
+  
   .hero-image{
     display: none;
   }  
