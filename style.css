@@ -1,43 +1,122 @@
+:root{
+  --black-color: rgb(54, 54, 54);
+  --gray-color: rgb(93, 93, 93);
+}
+
 *{
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-.container{
+main{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero{
+  display: grid;
+  grid-template-columns: minmax(300px, 2fr) 3fr;
+  grid-auto-rows: 600px;
+  border-bottom: 1px solid #eee;
+}
+
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  /* Hace que la imagen se ajuste al espacio
+    que está ocupando. La imagen siempre se ubica
+    para verse completa*/
+  object-fit: contain;
+}
+
+.info{
+  align-self: center;
+  justify-self: center;
   display: grid;
 
-  /* Ancho de cada columna */
-  /* grid-template-columns: 100px 200px 300px; */
-
-  /* Alto de cada fila */
-  grid-template-rows: 150px 250px;
-
-  /* Cada fila nueva tendrá 150px de altura */
-  /* grid-auto-rows: 150px; */
-
-  /* Cada column nuevo tendrá 100px de ancho */ 
-  grid-auto-columns: 100px;
-
-  /* Distribución/Llenado de items en la grilla */
-  grid-auto-flow: column;
-    /*  column - crea nuevas columnas
-        row - crea nuevas filas
-        dense - usa los huecos para rellenar      
-    */
-
-  /* Crear un espacio entre rows/columns, no lo crea en el perímetro del container */
-  row-gap: 20px;
-  column-gap: 40px;
-
-  /* mismo gap para rows y columns */
-  /* gap: 50px; */
-
-  border: 5px solid lightcoral;
+  justify-items: start;
+  align-items: center;
+  row-gap: 30px;
 }
 
-.item{
-  border: 5px solid lightgreen;
-  font-size: 4rem;
+.info > h1{
+  font-size: 3.8rem;
+  color: var(--black-color);
+}
+
+.info > p{
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.info > button{
+  width: 130px;
+  height: 35px;
+  border-radius: 25px;
+  border: none;
+  background-color: #ff9c23;
+  font-size: 0.85rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.info > button:hover {
+  background-color: #fb8c00;
+}
+
+/* Services */
+h2{
+  margin: 50px 0px;
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+  color: var(--gray-color);
+}
+
+.services-grid{
+  height: 600px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;  
+  gap: 20px;
+  justify-content: center;  
+  place-items: center;
+}
+
+.services-dish{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.services-dish__big{  
+  grid-area: 1 / 1 / 3 / 3;
+}
+
+/* Menu */
+.menu-grid{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(5, minmax(100px, 250px));
+  gap: 10px;
+}
+
+.menu-dish{
+  background-color: rgb(255, 246, 234);
+  padding: 10px;
+  border-top-left-radius: 40px;
+}
+
+.menu-dish img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+footer{
+  height: 100px;
 }
